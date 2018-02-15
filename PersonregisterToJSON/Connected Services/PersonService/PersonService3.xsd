@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/NHN.Contracts.Data" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/NHN.Contracts.Data" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://personregister-web.test.nhn.no/Personregister.WCF/PersonService.svc?xsd=xsd0" namespace="http://register.nhn.no/PR" />
+  <xs:complexType name="SearchResult">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://register.nhn.no/PR" minOccurs="0" name="Persons" nillable="true" type="q1:ArrayOfPerson" />
+      <xs:element minOccurs="0" name="Status" nillable="true" type="tns:Status" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SearchResult" nillable="true" type="tns:SearchResult" />
+  <xs:complexType name="Status">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Code" type="xs:int" />
+      <xs:element minOccurs="0" name="CurrentPage" type="xs:int" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Reason" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ResultsPerPage" type="xs:int" />
+      <xs:element minOccurs="0" name="TotalPages" type="xs:int" />
+      <xs:element minOccurs="0" name="TotalResults" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Status" nillable="true" type="tns:Status" />
+  <xs:complexType name="LookupParameters">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Date" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="NIN" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LookupParameters" nillable="true" type="tns:LookupParameters" />
+</xs:schema>

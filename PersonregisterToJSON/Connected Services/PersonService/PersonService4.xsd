@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://register.nhn.no/PR" elementFormDefault="qualified" targetNamespace="http://register.nhn.no/PR" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://personregister-web.test.nhn.no/Personregister.WCF/PersonService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/NHN.Contracts.Data" />
+  <xs:import schemaLocation="https://personregister-web.test.nhn.no/Personregister.WCF/PersonService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="https://personregister-web.test.nhn.no/Personregister.WCF/PersonService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/System.Collections.Generic" />
+  <xs:element name="Search">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="parameters" nillable="true" type="tns:SearchParameters" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="SearchParameters">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DateOfBirth" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MiddleName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MunicipalityCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Page" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PostalPlace" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ResultsPerPage" type="xs:int" />
+      <xs:element minOccurs="0" name="SearchFhNumberPersonsToo" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ZipCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SearchParameters" nillable="true" type="tns:SearchParameters" />
+  <xs:element name="SearchResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/NHN.Contracts.Data" minOccurs="0" name="SearchResult" nillable="true" type="q1:SearchResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ArrayOfPerson">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Person" nillable="true" type="tns:Person" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPerson" nillable="true" type="tns:ArrayOfPerson" />
+  <xs:complexType name="Person">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Addresses" nillable="true" type="tns:ArrayOfAddress" />
+      <xs:element minOccurs="0" name="Citizenship" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CitizenshipCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Custody" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DateCitizenship" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DateCustody" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DateMaritalStatus" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DateOfBirth" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DateParentalResponsibility" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DateStatus" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DateWithoutLegalCapacity" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DateWorkPermit" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DufNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FathersNIN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GivenName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MaritalStatus" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="MiddleName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MothersNIN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NIN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NewNIN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OldNIN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ParentalResponsibility" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="RegStatus" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Sn" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SpouseNIN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StatusCountryCode" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="WithoutLegalCapacity" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WorkPermit" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Person" nillable="true" type="tns:Person" />
+  <xs:complexType name="ArrayOfAddress">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Address" nillable="true" type="tns:Address" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAddress" nillable="true" type="tns:ArrayOfAddress" />
+  <xs:complexType name="Address">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AddressLine1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AddressLine2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AddressLine3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ApartmentNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BasicStatisticalUnit" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="CadastralNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CoAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Constituency" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Country" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CurrentAddress" type="xs:boolean" />
+      <xs:element minOccurs="0" name="DateAdrFrom" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DatePostalType" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DistrictCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DistrictName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HouseLetter" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HouseNumber" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Municipality" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NIN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PostalAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PostalAddressValidFrom" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PostalCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PostalPlace" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PostalType" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PropertyNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SchoolDistrict" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="St" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StreetName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StreetNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="XCoord" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="YCoord" nillable="true" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Address" nillable="true" type="tns:Address" />
+  <xs:element name="GetPerson">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/NHN.Contracts.Data" minOccurs="0" name="parameters" nillable="true" type="q2:LookupParameters" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPersonResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetPersonResult" nillable="true" type="tns:Person" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPersons">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="listOfNIN" nillable="true" type="q3:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPersonsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetPersonsResult" nillable="true" type="tns:ArrayOfPerson" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAddresses">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/NHN.Contracts.Data" minOccurs="0" name="parameters" nillable="true" type="q4:LookupParameters" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAddressesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetAddressesResult" nillable="true" type="tns:ArrayOfAddress" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetChildren">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="NIN" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetChildrenResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetChildrenResult" nillable="true" type="tns:ArrayOfPerson" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIdentityChanges">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="from" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="to" nillable="true" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIdentityChangesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetIdentityChangesResult" nillable="true" type="tns:ArrayOfIdentityChange" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ArrayOfIdentityChange">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="IdentityChange" nillable="true" type="tns:IdentityChange" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfIdentityChange" nillable="true" type="tns:ArrayOfIdentityChange" />
+  <xs:complexType name="IdentityChange">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DateStatus" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="NIN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OldNIN" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IdentityChange" nillable="true" type="tns:IdentityChange" />
+  <xs:element name="GetChanges">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="from" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="to" nillable="true" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetChangesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetChangesResult" nillable="true" type="tns:ArrayOfPerson" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAddressesAdvanced">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="parameters" nillable="true" type="tns:AdvancedLookupParameters" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="AdvancedLookupParameters">
+    <xs:sequence>
+      <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ListOfNIN" nillable="true" type="q5:ArrayOfstring" />
+      <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/System.Collections.Generic" minOccurs="0" name="SearchConstraints" nillable="true" type="q6:ArrayOfKeyValuePairOfstringstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AdvancedLookupParameters" nillable="true" type="tns:AdvancedLookupParameters" />
+  <xs:element name="GetAddressesAdvancedResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetAddressesAdvancedResult" nillable="true" type="tns:ArrayOfAddress" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="8afacb1a-83ad-4918-af10-3c54ecf48ddf" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://personregister-web.test.nhn.no/Personregister.WCF/PersonService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="PersonService.xsd" MetadataType="Schema" ID="43bd9c24-93d0-4718-afb1-c745dd0a3d55" SourceId="1" SourceUrl="https://personregister-web.test.nhn.no/Personregister.WCF/PersonService.svc?xsd=xsd3" />
+    <MetadataFile FileName="PersonService1.xsd" MetadataType="Schema" ID="4bcbe4a2-c7a8-4bea-9a52-3c74ad45552a" SourceId="1" SourceUrl="https://personregister-web.test.nhn.no/Personregister.WCF/PersonService.svc?xsd=xsd1" />
+    <MetadataFile FileName="PersonService2.xsd" MetadataType="Schema" ID="4b3ee9bb-924a-4b46-8c13-e023149a4be6" SourceId="1" SourceUrl="https://personregister-web.test.nhn.no/Personregister.WCF/PersonService.svc?xsd=xsd4" />
+    <MetadataFile FileName="PersonService3.xsd" MetadataType="Schema" ID="2f7cc12a-bb64-43db-a18d-23c4526415c5" SourceId="1" SourceUrl="https://personregister-web.test.nhn.no/Personregister.WCF/PersonService.svc?xsd=xsd2" />
+    <MetadataFile FileName="PersonService.disco" MetadataType="Disco" ID="7706d11c-f274-44bc-a6ed-df16c54d3b81" SourceId="1" SourceUrl="https://personregister-web.test.nhn.no/Personregister.WCF/PersonService.svc?disco" />
+    <MetadataFile FileName="PersonService.wsdl" MetadataType="Wsdl" ID="2ee5757b-a51d-4d7e-8c4b-a9df2b366369" SourceId="1" SourceUrl="https://personregister-web.test.nhn.no/Personregister.WCF/PersonService.svc?wsdl" />
+    <MetadataFile FileName="PersonService4.xsd" MetadataType="Schema" ID="5daac9da-f3d7-44b1-bae0-32a24f27016b" SourceId="1" SourceUrl="https://personregister-web.test.nhn.no/Personregister.WCF/PersonService.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
