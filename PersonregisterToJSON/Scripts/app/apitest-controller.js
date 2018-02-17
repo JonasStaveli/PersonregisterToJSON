@@ -16,6 +16,7 @@
         $scope.getPerson = function () {
 
             $http.get("/personregister/" + $scope.sok).then(function (data, status, headers, config) {
+                $scope.title = "Personregister JSON API";
                 $scope.fname = data.data.Person.GivenName;
                 $scope.ename = data.data.Person.Sn;
                 $scope.NIN = data.data.Person.NIN;
